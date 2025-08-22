@@ -18,10 +18,13 @@
     .slide {
       display: none;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start; /* content starts at top */
       align-items: center;
       text-align: center;
       padding: 20px;
+      max-height: 100vh;  /* limit to viewport height */
+      overflow-y: auto;   /* allow vertical scrolling if needed */
+      box-sizing: border-box;
     }
     .active {
       display: flex;
