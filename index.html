@@ -43,21 +43,29 @@
     <button onclick="nextSlide()">Next</button>
   </div>
 
-  <!-- Slide 2: Placeholder for next section -->
-  <div id="slide2" class="slide">
-    <div class="bold">This will be the next slide.</div>
-    <button onclick="prevSlide()">Back</button>
-  </div>
+  <!-- Slide 2: How to Play -->
+<div id="slide2" class="slide">
+  <div class="bold">
+    How to play<br><br>
+    Cards will present a Topic, and 4 suggestive prompts underneath. Roll a dice to determine who answers first. Highest wins.<br><br>
 
-  <script>
-    let current = 1;
-    function showSlide(n) {
-      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-      document.getElementById('slide' + n).classList.add('active');
-      current = n;
-    }
-    function nextSlide() { showSlide(current + 1); }
-    function prevSlide() { showSlide(current - 1); }
-  </script>
-</body>
-</html>
+    Set a 1 minute timer to think of an answer. You must use suggested prompts to create your answers whether fact or fiction.<br><br>
+
+    You can use 1, or as many prompts needed to answer. If you have no truth from the prompts, create fiction.<br><br>
+
+    <strong>For eg:</strong><br><br>
+    Topic: A smell that …<br>
+    Prompts: Car / Outdoors / Hotel / Horny<br><br>
+
+    Answer: “the smell of a certain cologne reminds me of a hotel a one night stand and I rented to fuck each other after a night out and I remember that smell as they deepthroated me.<br><br>
+
+    *Elaborate more details, turn the whole truth into a erotic story from start to finish*<br><br>
+
+    All players tell their story, and all players write down true or false.<br>
+    Each player admits if their answer was in fact true, or made up fantasy fiction.<br><br>
+
+    Get creative, get aroused, but more importantly, get that dirty imagination going. The more unbelievable your truth sounds, the more you win.
+  </div>
+  <button onclick="prevSlide()">Back</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
