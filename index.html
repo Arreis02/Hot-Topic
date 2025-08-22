@@ -75,7 +75,7 @@
 
       Answer: “the smell of a certain cologne reminds me of a hotel a one night stand and I rented to fuck each other after a night out and I remember that smell as they deepthroated me.<br><br>
 
-      *Elaborate more details, turn the whole truth into a erotic story from start to finish*<br><br>
+      *Elaborate more details, turn the whole truth into an erotic story from start to finish*<br><br>
 
       All players tell their story, and all players write down true or false.<br>
       Each player admits if their answer was in fact true, or made up fantasy fiction.<br><br>
@@ -86,6 +86,30 @@
     <button onclick="nextSlide()">Next</button>
   </div>
 
+  <!-- Slide 3: Rules -->
+  <div id="slide3" class="slide">
+    <div class="bold">
+      RULES<br><br>
+      All players must answer the topic. Answers must be crafted from prompt suggestions.<br>
+      No interrupting players' answers.<br>
+      Questions can only be asked once answers are selected, true or false.
+    </div>
+    <button onclick="prevSlide()">Back</button>
+    <button onclick="nextSlide()">Next</button>
+  </div>
+
+  <!-- Slide 4: What You Will Need -->
+  <div id="slide4" class="slide">
+    <div class="bold">
+      What you will need<br><br>
+      Pen & Paper<br>
+      Dice & Timer<br>
+      Some drinks, imagination and a dirty fun attitude.<br>
+      For couples, maybe some toys, sex pills and extra lube…
+    </div>
+    <button onclick="prevSlide()">Back</button>
+  </div>
+
   <script>
     let currentSlide = 1;
 
@@ -94,15 +118,18 @@
         slide.classList.remove('active');
         if (index === n - 1) slide.classList.add('active');
       });
+      currentSlide = n;
     }
 
     function nextSlide() {
       currentSlide++;
+      if(currentSlide > document.querySelectorAll('.slide').length) currentSlide = document.querySelectorAll('.slide').length;
       showSlide(currentSlide);
     }
 
     function prevSlide() {
       currentSlide--;
+      if(currentSlide < 1) currentSlide = 1;
       showSlide(currentSlide);
     }
   </script>
