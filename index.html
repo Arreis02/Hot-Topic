@@ -42,6 +42,10 @@
       font-size: 18px;
       line-height: 1.5;
     }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
   </style>
 </head>
 <body>
@@ -111,22 +115,19 @@
     <button onclick="nextSlide()">Next</button>
   </div>
 
-  <!-- Slide 5: Game Card Example -->
+  <!-- Slide 5: Game Card Display Only -->
   <div id="slide5" class="slide">
-    <div>
-      <div style="color:#FF69B4; font-weight:bold; font-size: 24px; margin-bottom: 10px;">
+    <div style="animation: slideIn 0.5s ease-out;">
+      <div style="color:#FF69B4; font-weight:bold; font-size: 28px; margin-bottom: 15px;">
         Topic: A memorable scent
       </div>
-      <div style="color:white; font-size:18px; margin-bottom: 20px;">
+      <div style="color:white; font-size:20px;">
         Prompts: Car / Outdoors / Hotel / Horny
       </div>
-
-      Enter your answer below using the prompts (fact or fiction):
     </div>
-    <textarea id="playerAnswer" rows="5" style="width: 90%; margin-top: 10px; font-size: 16px;"></textarea><br>
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 30px;">
       <button onclick="prevSlide()">Back</button>
-      <button onclick="submitAnswer()">Submit</button>
+      <button onclick="nextSlide()">Next</button>
     </div>
   </div>
 
@@ -151,16 +152,6 @@
       currentSlide--;
       if(currentSlide < 1) currentSlide = 1;
       showSlide(currentSlide);
-    }
-
-    function submitAnswer() {
-      const answer = document.getElementById('playerAnswer').value;
-      if(!answer.trim()) {
-        alert("Please enter an answer before submitting!");
-        return;
-      }
-      alert("Answer submitted! You can continue to next topic.");
-      nextSlide();
     }
   </script>
 </body>
