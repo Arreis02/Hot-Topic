@@ -46,6 +46,11 @@
       0% { opacity: 0; transform: translateX(50px); }
       100% { opacity: 1; transform: translateX(0); }
     }
+    @keyframes flash {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -115,10 +120,10 @@
     <button onclick="nextSlide()">Next</button>
   </div>
 
-  <!-- Slide 5: Game Card Display Only -->
+  <!-- Slide 5: Game Card Display Only with Flashing Topic -->
   <div id="slide5" class="slide">
     <div style="animation: slideIn 0.5s ease-out;">
-      <div style="color:#FF69B4; font-weight:bold; font-size: 28px; margin-bottom: 15px;">
+      <div style="color:#FF69B4; font-weight:bold; font-size: 32px; margin-bottom: 15px; animation: flash 2s infinite alternate;">
         Topic: A memorable scent
       </div>
       <div style="color:white; font-size:20px;">
