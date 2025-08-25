@@ -14,29 +14,29 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      overflow: hidden;
     }
     .slide {
       display: none;
       flex-direction: column;
-      justify-content: flex-start; /* content starts at top */
+      justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
-      max-height: 100vh;  /* limit to viewport height */
-      overflow-y: auto;   /* allow vertical scrolling if needed */
+      max-width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
       box-sizing: border-box;
     }
-    .active {
-      display: flex;
-    }
+    .active { display: flex; }
     button {
       margin-top: 20px;
       padding: 10px 20px;
       font-size: 16px;
-      border: 2px solid #40E0D0; /* turquoise border */
+      border: 2px solid #40E0D0;
       border-radius: 8px;
-      background: black;           /* black background */
-      color: #40E0D0;             /* turquoise text */
+      background: black;
+      color: #40E0D0;
       cursor: pointer;
       font-weight: bold;
       box-shadow: 0 0 10px #40E0D0, 0 0 20px #40E0D0, 0 0 30px #40E0D0;
@@ -46,15 +46,9 @@
       box-shadow: 0 0 20px #40E0D0, 0 0 40px #40E0D0, 0 0 60px #40E0D0;
       transform: scale(1.05);
     }
-    .bold {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 1.5;
-    }
-    @keyframes slideIn {
-      0% { opacity: 0; transform: translateX(50px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
+    .bold { font-weight: bold; font-size: 18px; line-height: 1.5; }
+    .topic { color: #FF69B4; font-weight: bold; font-size: 32px; margin-bottom: 15px; animation: flash 2s infinite alternate; }
+    .prompts { color: white; font-size: 20px; }
     @keyframes flash {
       0% { opacity: 1; }
       50% { opacity: 0.5; }
@@ -63,110 +57,195 @@
   </style>
 </head>
 <body>
-  <!-- Slide 1: Objective -->
-  <div id="slide1" class="slide active">
-    <div class="bold">
-      An interactive adult game for couples & friends that explores the boundaries of sex, dirty talk and erotic story telling by creating sexual energy through communication. Are you an inner wild child, or a boring conservative prude? <br><br>
 
-      Objectives: Channel your imaginative inner porn star & erotic author to give the most erotic, wild and steamiest answers you can to make your partner blush with erotic curiosity and sexual imagination. <br><br>
-
-      The plot twist: The player that can tell the hottest and sexiest stories, with as much truth, or least amount of fiction, wins. You couldn't be that wild... Or could you? <br><br>
-
-      Transcribe your sexual experiences and make it hot, maybe even unbelievable…
-    </div>
-    <button onclick="nextSlide()">Next</button>
+<!-- Slide 1: Objective -->
+<div class="slide active">
+  <div class="bold">
+    An interactive adult game for couples & friends that explores the boundaries of sex, dirty talk and erotic story telling by creating sexual energy through communication. Are you an inner wild child, or a boring conservative prude?<br><br>
+    Objectives: Channel your imaginative inner porn star & erotic author to give the most erotic, wild and steamiest answers you can to make your partner blush with erotic curiosity and sexual imagination.<br><br>
+    The plot twist: The player that can tell the hottest and sexiest stories, with as much truth, or least amount of fiction, wins. You couldn't be that wild... Or could you?<br><br>
+    Transcribe your sexual experiences and make it hot, maybe even unbelievable…
   </div>
+  <button onclick="nextSlide()">Next</button>
+</div>
 
-  <!-- Slide 2: How to Play -->
-  <div id="slide2" class="slide">
-    <div class="bold">
-      How to play<br><br>
-      Cards will present a Topic, and 4 suggestive prompts underneath. Roll a dice to determine who answers first. Highest wins.<br><br>
-
-      Set a 1 minute timer to think of an answer. You must use suggested prompts to create your answers whether fact or fiction.<br><br>
-
-      You can use 1, or as many prompts needed to answer. If you have no truth from the prompts, create fiction.<br><br>
-
-      <strong>For eg:</strong><br><br>
-      Topic: A smell that …<br>
-      Prompts: Car / Outdoors / Hotel / Horny<br><br>
-
-      Answer: “the smell of a certain cologne reminds me of a hotel a one night stand and I rented to fuck each other after a night out and I remember that smell as they deepthroated me.<br><br>
-
-      *Elaborate more details, turn the whole truth into an erotic story from start to finish*<br><br>
-
-      All players tell their story, and all players write down true or false.<br>
-      Each player admits if their answer was in fact true, or made up fantasy fiction.<br><br>
-
-      Get creative, get aroused, but more importantly, get that dirty imagination going. The more unbelievable your truth sounds, the more you win.
-    </div>
-    <button onclick="prevSlide()">Back</button>
-    <button onclick="nextSlide()">Next</button>
+<!-- Slide 2: How to Play -->
+<div class="slide">
+  <div class="bold">
+    How to play<br><br>
+    Cards will present a Topic, and 4 suggestive prompts underneath. Roll a dice to determine who answers first. Highest wins.<br><br>
+    Set a 1 minute timer to think of an answer. You must use suggested prompts to create your answers whether fact or fiction.<br><br>
+    You can use 1, or as many prompts needed to answer. If you have no truth from the prompts, create fiction.<br><br>
+    <strong>For example:</strong><br>
+    Topic: A smell that …<br>
+    Prompts: Car / Outdoors / Hotel / Horny<br><br>
+    Answer: “the smell of a certain cologne reminds me of a hotel a one night stand and I rented to fuck each other after a night out and I remember that smell as they deepthroated me.<br><br>
+    *Elaborate more details, turn the whole truth into an erotic story from start to finish*<br><br>
+    All players tell their story, and all players write down true or false. Each player admits if their answer was in fact true, or made up fantasy fiction.<br><br>
+    Get creative, get aroused, but more importantly, get that dirty imagination going. The more unbelievable your truth sounds, the more you win.
   </div>
+  <button onclick="prevSlide()">Back</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
 
-  <!-- Slide 3: Rules -->
-  <div id="slide3" class="slide">
-    <div class="bold">
-      RULES<br><br>
-      All players must answer the topic. Answers must be crafted from prompt suggestions.<br>
-      No interrupting players' answers.<br>
-      Questions can only be asked once answers are selected, true or false.
-    </div>
-    <button onclick="prevSlide()">Back</button>
-    <button onclick="nextSlide()">Next</button>
+<!-- Slide 3: Rules -->
+<div class="slide">
+  <div class="bold">
+    RULES<br><br>
+    All players must answer the topic. Answers must be crafted from prompt suggestions.<br>
+    No interrupting players' answers.<br>
+    Questions can only be asked once answers are selected, true or false.
   </div>
+  <button onclick="prevSlide()">Back</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
 
-  <!-- Slide 4: What You Will Need -->
-  <div id="slide4" class="slide">
-    <div class="bold">
-      What you will need<br><br>
-      Pen & Paper<br>
-      Dice & Timer<br>
-      Some drinks, imagination and a dirty fun attitude.<br>
-      For couples, maybe some toys, sex pills and extra lube…
-    </div>
-    <button onclick="prevSlide()">Back</button>
-    <button onclick="nextSlide()">Next</button>
+<!-- Slide 4: What You Will Need -->
+<div class="slide">
+  <div class="bold">
+    What you will need<br><br>
+    Pen & Paper<br>
+    Dice & Timer<br>
+    Some drinks, imagination and a dirty fun attitude.<br>
+    For couples, maybe some toys, sex pills and extra lube…
   </div>
+  <button onclick="prevSlide()">Back</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
 
-  <!-- Slide 5: Game Card Display Only with Flashing Topic -->
-  <div id="slide5" class="slide">
-    <div style="animation: slideIn 0.5s ease-out;">
-      <div style="color:#FF69B4; font-weight:bold; font-size: 32px; margin-bottom: 15px; animation: flash 2s infinite alternate;">
-        Topic: A memorable scent
-      </div>
-      <div style="color:white; font-size:20px;">
-        Prompts: Car / Outdoors / Hotel / Horny
-      </div>
-    </div>
-    <div style="margin-top: 30px;">
+<!-- Topic slides will be dynamically generated here -->
+<div id="topic-slides"></div>
+
+<script>
+  // Array of 100 topics with 4 prompts each
+  const topics = [
+    { topic: "The sexiest thing I…", prompts: ["Did", "Wore", "Saw", "Experienced"] },
+    { topic: "My first passionate kiss was…", prompts: ["Awkward", "Tonsil hockey", "Steamy", "Place"] },
+    { topic: "When I lost my virginity…", prompts: ["Screamed", "Age", "Enjoyed", "Regret"] },
+    { topic: "I think I've kissed…", prompts: ["Total people", "A friend's partner", "Same sex kisses", "In one night"] },
+    { topic: "I've masturbated over…", prompts: ["A friend", "A previous experience", "Person of authority (teacher, boss)", "Fantasy"] },
+    { topic: "Interracial sex I've…", prompts: ["Tried", "Fantasized about", "Been hit on", "Rejected"] },
+    { topic: "I was so embarrassed when…", prompts: ["Premature Ejaculation", "Size too big/small", "Fell Asleep", "Dirty talk"] },
+    { topic: "An inappropriate crush…", prompts: ["You slept with", "Rejected", "Found irresistible", "Masturbated over"] },
+    { topic: "The very first time I touched a vagina/penis…", prompts: ["Place", "How you felt", "How it happened", "For how long"] },
+    { topic: "Majority of first dates or first time hookups…", prompts: ["I said no sex", "Kissing only", "Hands or Oral", "Ready to fuck"] },
+    { topic: "I gave/received a handjob…", prompts: ["Strangest Place", "Whilst driving", "Most random person", "Nearly Caught"] },
+    { topic: "This one time in a movie cinema…", prompts: ["Fingered", "Penis in popcorn", "Made out", "Watched an erotic movie"] },
+    { topic: "My first orgasm …", prompts: ["Was Awkward", "What sexual act", "Made a mess", "With who"] },
+    { topic: "A sex toy that I ….", prompts: ["Used with a lover", "Would choose currently", "Used on a lover", "Never thought I'd enjoy"] },
+    { topic: "Your first time doing oral sex…", prompts: ["They cummed", "Didn't warn", "Was enjoyable", "Where it happened"] },
+    { topic: "In the shower…", prompts: ["Wildest position", "Best Experience", "A slippery mishap", "Golden shower"] },
+    { topic: "Flashing in public…", prompts: ["Amount of times", "Body part", "Place", "A Specific Person"] },
+    { topic: "Food, drugs… & Sex.", prompts: ["Used in sexual act", "Got me horny", "Memorable event", "One night stand"] },
+    { topic: "An ex lover enjoyed watching…", prompts: ["Me self pleasure", "Porn with me", "Giving them oral sex", "Having sex in the mirror"] },
+    { topic: "I had only met them online but…", prompts: ["Went to their place for sex", "Sent them naked pics", "Pleasured myself", "Sexted them"] },
+    { topic: "A threesome…", prompts: ["You Experienced", "Fantasized about", "Nearly Had", "MMF or FFM"] },
+    { topic: "I'm sure I have …", prompts: ["Done something sexual with more than 1 person in 24hrs", "Ass licking", "Fantasized about", "Done something taboo"] },
+    { topic: "An orgasm …", prompts: ["Screamed too loud", "Can't Forget", "Cummed the Most", "Fastest time"] },
+    { topic: "A porno that I …", prompts: ["Made of myself", "Your search Category", "Imitated", "Watched With a lover"] },
+    { topic: "The worst sex …", prompts: ["Bad style", "Boring", "No Attraction", "Never Came"] },
+    { topic: "There was one friend …", prompts: ["Sexual Close Call", "Wet dream", "Had Sex Once", "No One Knows About"] },
+    { topic: "I didn't tell you about …", prompts: ["A Sexual Experience", "A Secret No One Knows", "A Fantasy", "Sex toy"] },
+    { topic: "It was painful, then felt good…", prompts: ["Hard thrusting/riding", "A unique experience", "A toy", "Size"] },
+    { topic: "This one time in bed…", prompts: ["Scary", "Funny", "Awkward", "Weird"] },
+    { topic: "The dirtiest thing in bed was…", prompts: ["A Request", "A Position", "Dirty Sentence", "Cum shot"] },
+    { topic: "I got so turned on when…", prompts: ["An Experience", "A Position", "Dirty Talk", "A Porno"] },
+    { topic: "Same Sex Experience", prompts: ["Most adventurous", "Fantasized", "Number of people", "Close Call"] },
+    { topic: "The first blowjob…", prompts: ["Felt", "How it Happened", "Scary", "Spit or Swallowed"] },
+    { topic: "When it comes to Sexting …", prompts: ["Made Myself Cum", "Number of people", "Most Turned On", "Dirtiest Video/Pic"] },
+    { topic: "I've tried imitating…", prompts: ["A porno", "A previous sexual experience", "Something I Read", "Wildest experience"] },
+    { topic: "In a car I've…", prompts: ["Number of people", "Wildest position", "Oral while driving", "Touched/Been touched with others in the car"] },
+    { topic: "A story about tits…", prompts: ["A pearl necklace", "Biggest turn on", "Requested to cum on", "First time tittyfucking"] },
+    { topic: "The wildest position…", prompts: ["Tried", "Asked to perform", "Most Creative", "Unique"] },
+    { topic: "Rough Sex …", prompts: ["Memorable Experience", "Turned You On", "Unique move", "Felt guilty enjoying"] },
+    { topic: "No one has ever known…", prompts: ["A certain one night stand", "Secret Fantasy", "Fetish or Kink", "A crossed line with someone off limits"] },
+    { topic: "I used a household item to…", prompts: ["Pleasure myself", "During Sex", "Satisfy Another", "Turned you on"] },
+    { topic: "If I had to confess…", prompts: ["A past hookup", "Best in bed", "Something I've tried", "Dirty act I pretended to hate"] },
+    { topic: "Oral…", prompts: ["Oral surprise", "Public place", "Too big", "Gagged"] },
+    { topic: "The most creative position given/received oral sex..", prompts: ["On my knees", "Standing up", "Head off the bed", "From behind"] },
+    { topic: "The morning after pill…", prompts: ["Amount of people", "A Specific Experience", "Number of times", "First time"] },
+    { topic: "Up the Ass…", prompts: ["Most Enjoyable", "A Finger", "Amount Of Times", "You've asked/been asked for it"] },
+    { topic: "I secretly like or have liked…", prompts: ["Fetish", "Person", "Position", "Toy"] },
+    { topic: "A kink that I…", prompts: ["Participated in", "Satisfied a partners", "Never Knew I had", "Would like to Try"] },
+    { topic: "I was caught…", prompts: ["By Someone", "Having Sex", "Masturbating", "Cheating"] },
+    { topic: "Age is just a number…", prompts: ["Had a crush on", "Your youngest or oldest kiss", "Gave /Received an orgasm", "You kinda knew it was too young or old"] },
+    { topic: "The longest I've gone…", prompts: ["Without sex", "In one session", "Having two different lovers", "Oral sex"] },
+    { topic: "I was dared…", prompts: ["Flash", "Something Sexual", "Steamy scene", "Thought I'd never do"] },
+    { topic: "A perfect stranger…", prompts: ["Blowjob", "Attracted To", "Had Sex With", "Masturbated over"] },
+    { topic: "The most terrible…", prompts: ["Position", "Experience", "Request", "Place"] },
+    { topic: "The first in bed to ever…", prompts: ["Unique position", "Multiple Orgasm", "Facial", "Dominate"] },
+    { topic: "I told a little lie…", prompts: ["During sex", "To a Lover", "About a relationship", "Sexual position or experience"] },
+    { topic: "I snuck off for sex…", prompts: ["Party", "Wedding", "Friends house", "Work"] },
+    { topic: "The last time before you…", prompts: ["Who you had sex with", "Gave you an orgasm", "Sex dream of someone else", "Watched a porno"] },
+    { topic: "Bent over …", prompts: ["Basin", "Counter", "Car", "Railing"] },
+    { topic: "Cummed so hard…", prompts: ["Couldn't Walk", "Woke the Neighbours", "Squirted", "A Massive Load"] },
+    { topic: "The kinkiest…", prompts: ["Oral sex", "Sexual Experience", "Video/pic you sent", "Porn you watched"] },
+    { topic: "In the pool…", prompts: ["Fucked", "Underwater oral", "Orgasm", "Anal"] },
+    { topic: "A Dirty request…", prompts: ["I've Tried", "Rejected", "Too shy to admit", "I asked for"] },
+    { topic: "I've never forgotten…", prompts: ["A one night stand", "A Sexual Moment", "A Specific Dick/Pussy", "A Person"] },
+    { topic: "The number 69…", prompts: ["How many Partners", "Kinkiest", "Done it Standing", "Cummed Together"] },
+    { topic: "When it comes to hair pulling…", prompts: ["Doggystyle", "A Rough blowjob", "First experience", "Turned On"] },
+    { topic: "In front of a mirror…", prompts: ["Fantasy", "Had sex", "Accidently seen someone", "Watched yourself fucking"] },
+    { topic: "In one night, the most…", prompts: ["Rounds of sex", "People kissed", "Orgasms achieved", "Positions you did"] },
+    { topic: "In a public toilet…", prompts: ["Had Sex", "Given/Received Oral", "Masturbated", "Spied on Someone"] },
+    { topic: "I finally admit my…", prompts: ["Best Sex", "Ugliest Fling", "Hidden Affair", "Secret Crush"] },
+    { topic: "I had two…", prompts: ["In the same day", "Threesome", "Friends with benefits", "Overlapping relationships"] },
+    { topic: "I was so turned on I had to…", prompts: ["Have someone", "Pleasure Myself", "Not use birth control", "Change underwear"] },
+    { topic: "I was shocked…", prompts: ["Small/Big", "What they said", "Cum size", "Position I tried"] },
+    { topic: "It was so wet…", prompts: ["Sheets", "Most turned on", "Underwear", "Sweat"] },
+    { topic: "It was so embarrassing…", prompts: ["Faked orgasm", "A sound", "Getting caught", "Facial expression"] },
+    { topic: "If I had to pick…", prompts: ["Most intense Orgasm", "Most Adventurous in bed", "Unique Fantasy", "Submissive or Dominant"] },
+    { topic: "During sex I've fantasized over…", prompts: ["A past lover", "A secret kink", "Movie scene", "Unique position"] },
+    { topic: "We didn't stop because…", prompts: ["Someone watching", "Knew it was wrong", "Too horny to stop", "It was painful"] },
+    { topic: "I was highly attracted to…", prompts: ["A friend's partner", "The way they did something", "Purely the sex", "Past lover"] },
+    { topic: "Under the open sky…", prompts: ["Best lover", "Planned or impromptu", "Riskiest of being caught", "Amount of times"] },
+    { topic: "I would say it was…", prompts: ["My most unique sexual performance", "My best blowjob", "My biggest orgasm", "The biggest cumshot"] },
+    { topic: "A time on a table…", prompts: ["Gave/received oral sex", "Most public", "Strip danced", "Bent over"] },
+    { topic: "The weirdest I've ever experienced…", prompts: ["Sex", "Request", "Dirty talk", "Attraction"] },
+    { topic: "I was surprisingly turned on & enjoyed it at the time…", prompts: ["Facial cumshot", "Choking & Slapping", "Rough deep throat", "Being dominantly forced consensually"] },
+    { topic: "I went out at night dressed up purposely…", prompts: ["Looking for sex", "Wearing no underwear", "Kissed as many as possible", "Knowing someone in particular wanted to fuck me"] },
+    { topic: "Being tied up…", prompts: ["50 shades style", "What you felt", "Number of times", "Who did it best"] },
+    { topic: "Been told… or told someone…", prompts: ["Good at oral sex", "Swallow it", "Fuck me hard", "They're your best, and weren't"] },
+    { topic: "The loudest moan…", prompts: ["An explosive orgasm", "It was too big", "Anal sex", "Went too deep"] },
+    { topic: "When it comes to hotels…", prompts: ["Rented just for sex", "Did everything but sex", "Drive past and remember a good night", "No one knew about"] },
+    { topic: "When it comes to oral…", prompts: ["The best at it", "Surprise mouthful", "Same sex", "Roughest experience"] },
+    { topic: "About spanking…", prompts: ["Paddle, hand or whip", "How many lovers", "Why it turns you on", "First time feeling it"] },
+    { topic: "Consequences didn't matter… because I was so horny…", prompts: ["No condom/creampies", "An off limits partner", "An Affair", "A place you had sex"] },
+    { topic: "It was definitely the hardest…", prompts: ["Thrusting", "Cumshot/Squirt", "I've ever felt", "Position I've tried"] },
+    { topic: "I watched a partner…", prompts: ["Masturbating", "Cheating", "While giving/receiving oral", "Home made porn"] },
+    { topic: "Physically it felt better because…", prompts: ["Girth", "Tighter", "Deeper", "G - Spot"] },
+    { topic: "I was taught…", prompts: ["By porno’s", "Oral sex", "Unique positions", "An ex lover"] },
+    { topic: "Against the wall…", prompts: ["Back", "Hands", "Amount of times", "Number of partners"] },
+    { topic: "A hot stranger…", prompts: ["I fucked them", "Sent naked pics", "Masturbated over", "Made the 1st move"] },
+    { topic: "It shocked me…", prompts: ["I didn't expect to like it", "Body part", "Exceptionally good in bed lover", "A move tried in bed"] },
+    { topic: "A taboo fantasy…", prompts: ["Same sex", "I've experienced", "Nobody knows", "Want to try"] }
+  ];
+
+  // Dynamically generate topic slides
+  const topicSlidesContainer = document.getElementById('topic-slides');
+  topics.forEach((item, index) => {
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.innerHTML = `
+      <div class="topic">${item.topic}</div>
+      <div class="prompts">${item.prompts.join(' / ')}</div>
       <button onclick="prevSlide()">Back</button>
       <button onclick="nextSlide()">Next</button>
-    </div>
-  </div>
+    `;
+    topicSlidesContainer.appendChild(slide);
+  });
 
-  <script>
-    let currentSlide = 1;
+  // Slide navigation
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  function showSlide(n) {
+    slides.forEach((slide, i) => slide.classList.remove('active'));
+    slides[n].classList.add('active');
+    currentSlide = n;
+  }
+  function nextSlide() { if (currentSlide < slides.length - 1) showSlide(currentSlide + 1); }
+  function prevSlide() { if (currentSlide > 0) showSlide(currentSlide - 1); }
+</script>
 
-    function showSlide(n) {
-      document.querySelectorAll('.slide').forEach((slide, index) => {
-        slide.classList.remove('active');
-        if (index === n - 1) slide.classList.add('active');
-      });
-      currentSlide = n;
-    }
-
-    function nextSlide() {
-      currentSlide++;
-      if(currentSlide > document.querySelectorAll('.slide').length) currentSlide = document.querySelectorAll('.slide').length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide--;
-      if(currentSlide < 1) currentSlide = 1;
-      showSlide(currentSlide);
-    }
-  </script>
 </body>
 </html>
